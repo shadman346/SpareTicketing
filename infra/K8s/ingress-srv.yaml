@@ -10,35 +10,7 @@ spec:
       - host: spareticketing.com
         http:
            paths:
-              - path: /auth
-                pathType: Prefix
-                backend:
-                   service:
-                      name: auth-clusterip-srv
-                      port:
-                         number: 4000
-              - path: /auth/signup
-                pathType: Prefix
-                backend:
-                   service:
-                      name: auth-clusterip-srv
-                      port:
-                         number: 4000
-              - path: /auth/signin
-                pathType: Prefix
-                backend:
-                   service:
-                      name: auth-clusterip-srv
-                      port:
-                         number: 4000
-              - path: /auth/signout
-                pathType: Prefix
-                backend:
-                   service:
-                      name: auth-clusterip-srv
-                      port:
-                         number: 4000
-              - path: /auth/currentuser
+              - path: /api/users/?(.*)
                 pathType: Prefix
                 backend:
                    service:
