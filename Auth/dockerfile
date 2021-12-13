@@ -7,7 +7,7 @@ WORKDIR /app
 
 # copy or look for changes in package.json from current directory that is Auth to the current directory of docker container which is /app
 COPY package.json .
-RUN npm install
+RUN npm install --only=prod
 
 # copy everything except what is already checked like package.json here
 COPY . .
