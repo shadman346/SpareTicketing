@@ -2,8 +2,7 @@ import express from "express";
 const router = express.Router();
 import { Request,Response } from 'express';
 import {body} from 'express-validator'
-import { BadRequestError } from "../errors/bad-req-error";
-import { validateRequest } from "../middleware/validate-request";
+import { BadRequestError, validateRequest } from "@shad-tix/common";
 import { User } from "../models/user";
 import { Password } from "../services/password";
 import { catchAsync } from "../util/catchAsync";
