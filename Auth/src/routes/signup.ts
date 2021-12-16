@@ -4,9 +4,9 @@ import { Request,Response } from 'express';
 const {body} = require('express-validator');
 import{catchAsync} from '../util/catchAsync'
 import {User} from '../models/user'
-import { BadRequestError } from "../errors/bad-req-error";
+import { BadRequestError,validateRequest } from "@shad-tix/common";
 import jwt from 'jsonwebtoken';
-import { validateRequest } from "../middleware/validate-request";
+
 
 router.post('/api/users/signup',
 [
