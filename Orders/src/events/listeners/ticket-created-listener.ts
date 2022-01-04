@@ -1,5 +1,5 @@
 import { Message } from 'node-nats-streaming';
-import { Subjects, Listener, TicketCreatedEvent } from '@sgtickets/common';
+import { Subjects, Listener, TicketCreatedEvent } from '@shad-tix/common';
 import { Ticket } from '../../models/ticket';
 import { queueGroupName } from './queue-group-name';
 
@@ -9,14 +9,14 @@ export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
 
   async onMessage(data: TicketCreatedEvent['data'], msg: Message) {
     const { id, title, price } = data;
-
+    console.log("inside ticket creatd listner order")
     const ticket = Ticket.build({
       id,
       title,
       price,
     });
     await ticket.save();
-
+    
     msg.ack();
   }
 }
