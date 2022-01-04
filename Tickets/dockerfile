@@ -1,0 +1,16 @@
+# file system that we are going to use
+FROM node:alpine
+
+# in which directory our application is going to be in docker container 
+# set current directory to /app
+WORKDIR /app
+
+# copy or look for changes in package.json from current directory that is Auth to the current directory of docker container which is /app
+COPY package.json .
+RUN npm install --only=prod
+
+# copy everything except what is already checked like package.json here
+COPY . .
+
+# to give some default command when docker containe is running
+CMD ["npm", "start"]
