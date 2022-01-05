@@ -9,7 +9,6 @@ export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
 
   async onMessage(data: TicketCreatedEvent['data'], msg: Message) {
     const { id, title, price } = data;
-    console.log("inside ticket creatd listner order")
     const ticket = Ticket.build({
       id,
       title,

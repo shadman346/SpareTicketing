@@ -3,7 +3,7 @@ import {
   requireAuth,
   NotFoundError,
   NotAuthorizedError,
-} from '@sgtickets/common';
+} from '@shad-tix/common';
 import { Order } from '../models/order';
 
 const router = express.Router();
